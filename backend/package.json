@@ -5,8 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "express": "3.4.4",
-    "node-parse-api": "^0.3.5"
-	},
+    "node-parse-api": "^0.3.5",
+    "request": "^2.57.0"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"

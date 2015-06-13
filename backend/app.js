@@ -5,6 +5,7 @@ var express = require("express");
 // Routes.
 var user = require("./routes/user");
 var bike = require("./routes/bike");
+var parts = require("./routes/parts");
 
 //App and server.
 var app = express();
@@ -28,6 +29,8 @@ app.configure(function () {
 app.get('/v1/user/:email', user.getUser);
 app.get('/v1/bike/:id', bike.getBike);
 app.post('/v1/bike', bike.createBike);
+app.get('/v1/parts/:id', parts.getPartById);
+app.get('/v1/categories/:category/parts', parts.getPartsByCategory);
 
 // Start web service.
 server.listen(app.get('port'), function() {
