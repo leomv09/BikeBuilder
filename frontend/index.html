@@ -17,6 +17,7 @@
     <script type="text/javascript" src="js/controllers.js"></script>
     <script type="text/javascript" src="js/services.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,8 +45,8 @@
             </div>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"> <span class="glyphicon glyphicon-comment"> </span> Contact Us </a></li>
-                <li><a href="#">Sign In </a></li>
-                <li><a href="#">Order Status </a></li>
+                <li><a href="#"> Sign In </a></li>
+                <li><a href="#"> Order Status </a></li>
                 <li><a href="#"> <span class="glyphicon glyphicon-shopping-cart"> </span> Cart </a></li>
             </ul>
         </div>
@@ -55,9 +56,9 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="list-group">
-                        <a id="startLink" href="#Start/" class="list-group-item active"> Start </a>
-                        <a id="customizeLink" href="#Customize/" class="list-group-item"> Customize </a>
-                        <a id="buyLink" href="#Buy/n" class="list-group-item"> Buy </a>
+                        <a id="startLink" href="#Start/" class="list-group-item active" onclick="changeProgress(1)"> Start </a>
+                        <a id="customizeLink" href="#Customize/" class="list-group-item" onclick="changeProgress(2)"> Customize </a>
+                        <a id="buyLink" href="#Buy/n" class="list-group-item" onclick="changeProgress(3)"> Buy </a>
                     </div>
                 </div>
                 <div class="col-md-9">

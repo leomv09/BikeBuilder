@@ -2,6 +2,10 @@ var BikeBuilderControllers = angular.module('BikeBuilder.Controllers', []);
 
 BikeBuilderControllers.controller("CustomizeController", ["$location", "$rootScope", "$scope", "$routeParams", "BikePartsService", function ($location, $rootScope, $scope, $routeParams, BikePartsService) {
 
+	$scope.frameId = $routeParams.frameId; 
+
+	
+
 	BikePartsService.getAllFrames()
 	.then(
 			function(products)
