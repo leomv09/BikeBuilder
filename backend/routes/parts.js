@@ -22,8 +22,8 @@ exports.getPartById = function(req, res) {
 exports.getPartsByQuery = function(req, res) {
 	var query = req.param("query");
 	
-	if (category) {
-		request('http://productapipqa-vip.bcinfra.net:9000/v1/products?q=' + query + 'site=competitivecyclist&limit=1000', function (error, response, body) {
+	if (query) {
+		request('http://productapipqa-vip.bcinfra.net:9000/v1/products?q=' + query + '&site=competitivecyclist&limit=1000', function (error, response, body) {
 			if (error) {
 				res.send(400, {"err": error});
 			}
@@ -36,6 +36,8 @@ exports.getPartsByQuery = function(req, res) {
 	}
 	else {
 		res.send(400, {"err": "Missing query"});
+	}
+}
 	
 
 exports.getPartsByCategory = function(req, res) {

@@ -12,11 +12,11 @@ function parseFrames(data)
 this.getAllFrames = function()
 {
 	var defer = $q.defer();
-	$http.get('http://localhost:4242/v1/categories?query=custom-road-bikes-frames').
+	$http.get('http://localhost:4242/v1/products/custom-road-bikes-frames').
 		  success(function(data, status, headers, config) 
 		  {
 		  	var products = parseFrames(data);
-		  	defer.resolve(products);
+		  	defer.resolve(data);
 		    	
 		  }).
 		  error(function(data, status, headers, config) {

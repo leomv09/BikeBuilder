@@ -29,7 +29,7 @@ app.configure(function () {
 app.get('/v1/user/:email', user.getUser);
 app.get('/v1/bike/:id', bike.getBike);
 app.get('/v1/parts/:id', parts.getPartById);
-app.get('/v1/categories/:query', parts.getPartsByQuery);
+app.get('/v1/products/:query', parts.getPartsByQuery);
 app.get('/v1/categories/:category/parts', parts.getPartsByCategory);
 app.get('/v1/categories', parts.getCategories);
 app.post('/v1/bike', bike.createBike);

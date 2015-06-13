@@ -1,6 +1,6 @@
 <div class="row"> 
-  <div class="col-xs-18 col-sm-6 col-md-5">
-    <div ng-repeat="frame in framesInfo">
+<div ng-repeat="frame in framesInfo">
+  <div class="col-xs-18 col-sm-6 col-md-4">
       <a id="buyLink" href="#Customize/{{ frame.id }}" class="list-group-item">
         <div class="thumbnail">
           <img src="http://www.competitivecyclist.com/{{ frame.skus[0].image.url}}" alt="">
@@ -8,10 +8,8 @@
               <div class="itemBox">
                   <h4> Brand </h4>
                   <p>{{ frame.brand.name }}</p>
-                  <h5> Name </h5>
-                  <p>{{ frame.tittle }}</p>
-                  <h5>Price</h5>
-                  <p>{{ frame.price }}</p>
+                  <h4> Name </h4>
+                  <p>{{ frame.title }}</p>
                   <div id="rating">
                       {{ frame.rating }}
                   </div>
@@ -19,6 +17,6 @@
             </div>
         </div>
       </a>
-    </div>
+  </div>
   </div>
 </div>

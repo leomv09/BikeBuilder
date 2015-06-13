@@ -15,14 +15,14 @@ app.config(['$routeProvider', function($routeProvider) {
     }
   );
 
-  $routeProvider.when("/Customize/:frameid?",
+  $routeProvider.when("/Customize/:frameid",
     {
       templateUrl: 'views/customize.html',
       controller: 'CustomizeController'
     }
   );
   
-  $routeProvider.when("/Share/:bikeid?",
+  $routeProvider.when("/Share/:bikeid",
     {
       templateUrl: 'views/socialshare.html',
       controller: 'SocialMediaController'

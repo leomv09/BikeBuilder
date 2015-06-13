@@ -4,12 +4,12 @@ BikeBuilderControllers.controller("CustomizeController", ["$location", "$rootSco
 
 	BikePartsService.getAllFrames()
 	.then(
-
 			function(products)
 			{
 				$scope.framesInfo = products;
+				console.log(products[0].id);
 			}
-		)
+		);
 
 }]);
 
