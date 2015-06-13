@@ -32,7 +32,7 @@ BikeBuilderServices.service("UsersService", ["$q", "$http", function($q, $http) 
 	this.getUser = function(id) {
 		var defer = $q.defer();
 		
-		$http.get('localhost:4242/v1/user/' + id)
+		$http.get('http://localhost:4242/v1/user/' + id)
 			.success(function(data, status, headers, config) {
 				defer.resolve(data);
 			})
