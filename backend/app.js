@@ -31,6 +31,7 @@ app.get('/v1/bike/:id', bike.getBike);
 app.post('/v1/bike', bike.createBike);
 app.get('/v1/parts/:id', parts.getPartById);
 app.get('/v1/categories/:category/parts', parts.getPartsByCategory);
+app.get('/v1/categories', parts.getCategories);
 
 // Start web service.
 server.listen(app.get('port'), function() {
