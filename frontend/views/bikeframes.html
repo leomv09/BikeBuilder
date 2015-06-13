@@ -1,0 +1,24 @@
+<div class="row"> 
+  <div class="col-xs-18 col-sm-6 col-md-5">
+    <div ng-repeat="frame in framesInfo">
+      <a id="buyLink" href={{ frame.ref }} class="list-group-item">
+        <div class="thumbnail">
+          <img src={{ frame.imgUrl }} alt="">
+            <div class="caption">
+              <div class="itemBox">
+                  <h4> Brand </h4>
+                  <p>{{ frame.brand }}</p>
+                  <h5> Name </h5>
+                  <p>{{ frame.name }}</p>
+                  <h5>Price</h5>
+                  <p>{{ frame.price }}</p>
+                  <div id="rating">
+                      {{ frame.rating }}
+                  </div>
+              </div>  
+            </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
