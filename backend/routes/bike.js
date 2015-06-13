@@ -4,10 +4,10 @@ function isValidBike(bike) {
 	if (!bike) {
 		return false;
 	}
-	if (!bike.Access || typeof bike.Access !== "boolean") {
+	if (!bike.access || typeof bike.access !== "boolean") {
 		return false;
 	}
-	if (!bike.Parts || !(bike.Parts instanceof Array) || bike.Parts.length == 0) {
+	if (!bike.parts || !(bike.parts instanceof Array) || bike.parts.length == 0) {
 		return false;
 	}
 	
