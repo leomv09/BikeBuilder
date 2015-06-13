@@ -1,0 +1,17 @@
+{
+  "name": "bike-builder",
+  "description": "Bike Builder - Web Service",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "express": "3.4.4"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leomv09/BikeBuilder"
+  }
+}
