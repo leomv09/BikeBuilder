@@ -1,9 +1,9 @@
 var parse = require('./../parse');
 
 exports.getUser = function(req, res, next) {
-	var email = req.param("email");
+	var id = req.param("id");
 	
-	parse.find('User', { "email": email }, function (err, response) {
+	parse.find('User', id, function (err, response) {
 		if (!err) {
 			res.json(200, response);
 		}
