@@ -8,3 +8,16 @@ BikeBuilderControllers.controller("SocialMediaController", ["$location", "$rootS
 
 }]);
 
+BikeBuilderControllers.controller("UserController", ["$scope", "$routeParams", "UsersService", function ($scope, $routeParams, UsersService) {
+	
+	var id = $routeParams.id;
+	
+	UsersService.getUser(id)
+	.then(
+		function (user)
+		{
+			$scope.user = user;
+		}
+	);
+	
+}]);
