@@ -27,16 +27,16 @@ this.getAllFrames = function()
 
 }]);
 
-BikeBuilderServices.service("UsersService", [function() {
+BikeBuilderServices.service("UsersService", ["$q", "$http", function($q, $http) {
 
 	this.getUser = function(id) {
 		var defer = $q.defer();
 		
-		$http.get('localhost:4242/user/' + id).
-			success(function(data, status, headers, config) {
+		$http.get('http://localhost:4242/v1/user/' + id)
+			.success(function(data, status, headers, config) {
 				defer.resolve(data);
-			}).
-			error(function(data, status, headers, config) {
+			})
+			.error(function(data, status, headers, config) {
 				defer.reject(data);
 			});
 		

@@ -1,9 +1,9 @@
 var parse = require('./../parse');
 
 exports.getUser = function(req, res, next) {
-	var email = req.param("email");
+	var id = req.param("id");
 	
-	parse.find('User', { "email": email }, function (err, response) {
+	parse.find('User', id, function (err, response) {
 		if (!err) {
 			res.json(200, response);
 		}
@@ -44,30 +44,35 @@ exports.addBike = function(req, res) {
 
 exports.getBikes = function(req, res) {
     var user = req.param("id");
-	var bikesIDs = [];
-    var allBikes = [];
     
     if(user){
         parse.find('User', user, function (err, userResponse) {
             if(!err){
-                bikesIDs = userResponse.bikes;   
+                bikes = userResponse.bikes;
+								parse.findMany('Bike', '', function (err, response) {
+										if(!err){
+												all = response.results;
+												var result = [];
+											
+												for (i = 0; i < bikes.length; i++) {
+													if (all.indexOf(bikes[i]) != -1) {
+														result.push(bikes[i]);
+													}
+												}
+												
+												res.json(result);
+										}
+										else{
+												res.json(404, {"err":"Cannot find any bike"});
+										}
+								});
             }
             else{
                 res.json(404, {"err":"Cannot find any user"});
             }
         });
-        parse.findMany('Bike', '', function (err, response) {
-            if(!err){
-                allBikes = response;   
-            }
-            else{
-                res.json(404, {"err":"Cannot find any user"});
-            }
-        });
-        console.log("IDS: "+ bikesIDs.length);
-        console.log("Bikes: "+ allBikes);
     }
-    else
+    else {
         res.json(400, {"err":"Invalid user"});
-    res.json(400, {"err":"Invalid user"});
+		}
 }

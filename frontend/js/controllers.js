@@ -24,11 +24,10 @@ BikeBuilderControllers.controller("SocialMediaController", ["$location", "$rootS
 BikeBuilderControllers.controller("UserController", ["$scope", "$routeParams", "UsersService", function ($scope, $routeParams, UsersService) {
 	
 	var id = $routeParams.id;
+	$scope.id = id;
 	
 	UsersService.getUser(id)
-	.then(
-		function (user)
-		{
+	.then(function (user) {
 			$scope.user = user;
 		}
 	);
