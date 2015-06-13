@@ -38,3 +38,11 @@ exports.getPartsByCategory = function(req, res) {
 		res.send(400, {"err": "Missing category"});
 	}
 }
+
+exports.getCategories = function(req, res) {
+	categories = [];
+    categories.push({ name: "Wheels, Tires, Tubes", id: "ccCat100407"});
+    categories.push({ name: "Drivetrain, Brakes", id: "ccCat100417"});
+    categories.push({ name: "Forks, Cockpit, Pedals", id: "ccCat100478"});
+    res.json(200, categories);
+}
