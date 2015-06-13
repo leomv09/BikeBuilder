@@ -35,6 +35,13 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: 'CustomizeController'
     }
   );
+	
+	$routeProvider.when("/user/:id",
+    {
+      templateUrl: 'views/userprofile.html',
+      controller: 'UserController'
+    }
+  );
   
   $routeProvider.otherwise(
     {
