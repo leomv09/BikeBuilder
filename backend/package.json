@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "dependencies": {
+    "deferred": "^0.7.2",
     "express": "3.4.4",
     "node-parse-api": "^0.3.5",
     "request": "^2.57.0"

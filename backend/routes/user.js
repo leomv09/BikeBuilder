@@ -40,3 +40,34 @@ exports.addBike = function(req, res) {
         res.json(400, {"err":"Invalid bike or user"});
 	}
 }
+
+
+exports.getBikes = function(req, res) {
+    var user = req.param("id");
+	var bikesIDs = [];
+    var allBikes = [];
+    
+    if(user){
+        parse.find('User', user, function (err, userResponse) {
+            if(!err){
+                bikesIDs = userResponse.bikes;   
+            }
+            else{
+                res.json(404, {"err":"Cannot find any user"});
+            }
+        });
+        parse.findMany('Bike', '', function (err, response) {
+            if(!err){
+                allBikes = response;   
+            }
+            else{
+                res.json(404, {"err":"Cannot find any user"});
+            }
+        });
+        console.log("IDS: "+ bikesIDs.length);
+        console.log("Bikes: "+ allBikes);
+    }
+    else
+        res.json(400, {"err":"Invalid user"});
+    res.json(400, {"err":"Invalid user"});
+}

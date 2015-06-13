@@ -26,6 +26,7 @@ app.configure(function () {
 });
 
 // REST API
+app.get('/v1/user/:id/bikes', user.getBikes);
 app.get('/v1/user/:email', user.getUser);
 app.get('/v1/bike/:id', bike.getBike);
 app.get('/v1/parts/:id', parts.getPartById);
