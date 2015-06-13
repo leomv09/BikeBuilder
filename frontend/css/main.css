@@ -3,3 +3,12 @@
 {
 	margin-top: 100px;
 }
+
+.hidden
+{
+	display: none;
+}
+
+#viewContent {
+	height: 600px;
+}
