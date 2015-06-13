@@ -1,6 +1,6 @@
 var app = angular.module('BikeBuilder', ['ngRoute', 'BikeBuilder.Controllers', 'BikeBuilder.Services']);
 
-app.config( function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
 	
   $routeProvider.when("/Start",
     {
@@ -42,4 +42,4 @@ app.config( function($routeProvider) {
     }
   );
   
-});
+}]);
