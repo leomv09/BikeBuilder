@@ -28,10 +28,12 @@ app.configure(function () {
 // REST API
 app.get('/v1/user/:email', user.getUser);
 app.get('/v1/bike/:id', bike.getBike);
-app.post('/v1/bike', bike.createBike);
 app.get('/v1/parts/:id', parts.getPartById);
 app.get('/v1/categories/:category/parts', parts.getPartsByCategory);
 app.get('/v1/categories', parts.getCategories);
+app.post('/v1/bike', bike.createBike);
+app.put('/v1/user/:id/bike/:bike', user.addBike);
+
 
 // Start web service.
 server.listen(app.get('port'), function() {
