@@ -5,32 +5,32 @@
                     <div class="col-xs-12" id="slider">
                         <!-- Top part of the slider -->
                         <div class="row">
-                            <div class="col-sm-8" id="carousel-bounding-box">
+                            <div class="col-sm-5" id="carousel-bounding-box">
                                 <div class="carousel slide" id="myCarousel">
                                     <!-- Carousel items -->
                                     <div class="carousel-inner">
                                         <div class="active item" data-slide-number="0">
-                                        <img src="http://placehold.it/770x300&text=one"></div>
+                                        <img src="http://www.competitivecyclist.com/{{ frame.products[0].skus[0].image.url}}"></div>
 
                                         <div class="item" data-slide-number="1">
-                                        <img src="http://placehold.it/770x300&text=two"></div>
+                                        <img src="http://www.competitivecyclist.com//images/items/medium/PIN/PIN000V/NAK.jpg"></div>
 
                                         <div class="item" data-slide-number="2">
-                                        <img src="http://placehold.it/770x300&text=three"></div>
+                                        <img src="http://www.competitivecyclist.com//images/items/medium/PIN/PIN000V/NAK.jpg"></div>
 
                                         <div class="item" data-slide-number="3">
-                                        <img src="http://placehold.it/770x300&text=four"></div>
+                                        <img src="http://www.competitivecyclist.com//images/items/medium/PIN/PIN000V/NAK.jpg"></div>
 
                                         <div class="item" data-slide-number="4">
-                                        <img src="http://placehold.it/770x300&text=five"></div>
+                                        <img src="http://www.competitivecyclist.com//images/items/medium/PIN/PIN000V/NAK.jpg"></div>
 
                                         <div class="item" data-slide-number="5">
-                                        <img src="http://placehold.it/770x300&text=six"></div>
+                                        <img src="http://www.competitivecyclist.com//images/items/medium/PIN/PIN000V/NAK.jpg"></div>
                                     </div><!-- Carousel nav -->
-                                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                                    <a class="left carousel-control" role="button" data-slide="prev">
                                         <span class="glyphicon glyphicon-chevron-left"></span>                                       
                                     </a>
-                                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                                    <a class="right carousel-control" role="button" data-slide="next">
                                         <span class="glyphicon glyphicon-chevron-right"></span>                                       
                                     </a>                                
                                     </div>
@@ -78,32 +78,15 @@
                         </div>
                     </div>
                 </div><!--/Slider-->
-
+								
                 <div class="row hidden-xs" id="slider-thumbs">
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-0"><img src="http://placehold.it/170x100&text=one"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-1"><img src="http://placehold.it/170x100&text=two"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-2"><img src="http://placehold.it/170x100&text=three"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-3"><img src="http://placehold.it/170x100&text=four"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-4"><img src="http://placehold.it/170x100&text=five"></a>
-                            </li>
-
-                            <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-5"><img src="http://placehold.it/170x100&text=six"></a>
+													<li ng-repeat="image in frame.products[0].detailImages" class="col-sm-2">
+														<a class="thumbnail" id="carousel-selector-0">
+															<img src="http://www.competitivecyclist.com/{{ image.url }}">
+														</a>
+													</li>
                             </li>
                         </ul>                 
                 </div>

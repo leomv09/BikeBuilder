@@ -25,6 +25,21 @@ this.getAllFrames = function()
 	return defer.promise;
 }
 
+this.getFrame = function(id)
+{
+	var defer = $q.defer();
+	$http.get('http://localhost:4242/v1/parts/' + id).
+		  success(function(data, status, headers, config) 
+		  {
+		  	defer.resolve(data);
+		    	
+		  }).
+		  error(function(data, status, headers, config) {
+		    defer.reject(error);
+		  });
+	return defer.promise;
+}
+
 }]);
 
 BikeBuilderServices.service("UsersService", ["$q", "$http", function($q, $http) {
